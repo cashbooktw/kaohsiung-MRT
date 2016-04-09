@@ -1,0 +1,235 @@
+[
+  {
+    "ODMRT_MrtId": "1",
+    "ODMRT_Name": "R3",
+    "ODMRT_Code": "101",
+    "ODMRT_CName": "小港"
+  },
+  {
+    "ODMRT_MrtId": "2",
+    "ODMRT_Name": "R4",
+    "ODMRT_Code": "102",
+    "ODMRT_CName": "高雄國際機場"
+  },
+  {
+    "ODMRT_MrtId": "3",
+    "ODMRT_Name": "R4A",
+    "ODMRT_Code": "103",
+    "ODMRT_CName": "草衙"
+  },
+  {
+    "ODMRT_MrtId": "4",
+    "ODMRT_Name": "R5",
+    "ODMRT_Code": "104",
+    "ODMRT_CName": "前鎮高中"
+  },
+  {
+    "ODMRT_MrtId": "5",
+    "ODMRT_Name": "R6",
+    "ODMRT_Code": "105",
+    "ODMRT_CName": "凱旋"
+  },
+  {
+    "ODMRT_MrtId": "6",
+    "ODMRT_Name": "R7",
+    "ODMRT_Code": "106",
+    "ODMRT_CName": "獅甲"
+  },
+  {
+    "ODMRT_MrtId": "7",
+    "ODMRT_Name": "R8",
+    "ODMRT_Code": "107",
+    "ODMRT_CName": "三多商圈"
+  },
+  {
+    "ODMRT_MrtId": "8",
+    "ODMRT_Name": "R9",
+    "ODMRT_Code": "108",
+    "ODMRT_CName": "中央公園"
+  },
+  {
+    "ODMRT_MrtId": "9",
+    "ODMRT_Name": "R10",
+    "ODMRT_Code": "109",
+    "ODMRT_CName": "美麗島"
+  },
+  {
+    "ODMRT_MrtId": "10",
+    "ODMRT_Name": "R11",
+    "ODMRT_Code": "110",
+    "ODMRT_CName": "高雄車站"
+  },
+  {
+    "ODMRT_MrtId": "11",
+    "ODMRT_Name": "R12",
+    "ODMRT_Code": "111",
+    "ODMRT_CName": "後驛"
+  },
+  {
+    "ODMRT_MrtId": "12",
+    "ODMRT_Name": "R13",
+    "ODMRT_Code": "112",
+    "ODMRT_CName": "凹子底"
+  },
+  {
+    "ODMRT_MrtId": "13",
+    "ODMRT_Name": "R14",
+    "ODMRT_Code": "113",
+    "ODMRT_CName": "巨蛋"
+  },
+  {
+    "ODMRT_MrtId": "14",
+    "ODMRT_Name": "R15",
+    "ODMRT_Code": "114",
+    "ODMRT_CName": "生態園區"
+  },
+  {
+    "ODMRT_MrtId": "15",
+    "ODMRT_Name": "R16",
+    "ODMRT_Code": "115",
+    "ODMRT_CName": "左營"
+  },
+  {
+    "ODMRT_MrtId": "16",
+    "ODMRT_Name": "R17",
+    "ODMRT_Code": "116",
+    "ODMRT_CName": "世運"
+  },
+  {
+    "ODMRT_MrtId": "17",
+    "ODMRT_Name": "R18",
+    "ODMRT_Code": "117",
+    "ODMRT_CName": "油廠國小"
+  },
+  {
+    "ODMRT_MrtId": "18",
+    "ODMRT_Name": "R19",
+    "ODMRT_Code": "118",
+    "ODMRT_CName": "楠梓加工區"
+  },
+  {
+    "ODMRT_MrtId": "19",
+    "ODMRT_Name": "R20",
+    "ODMRT_Code": "119",
+    "ODMRT_CName": "後勁"
+  },
+  {
+    "ODMRT_MrtId": "20",
+    "ODMRT_Name": "R21",
+    "ODMRT_Code": "120",
+    "ODMRT_CName": "都會公園"
+  },
+  {
+    "ODMRT_MrtId": "21",
+    "ODMRT_Name": "R22",
+    "ODMRT_Code": "121",
+    "ODMRT_CName": "青埔"
+  },
+  {
+    "ODMRT_MrtId": "22",
+    "ODMRT_Name": "R22A",
+    "ODMRT_Code": "122",
+    "ODMRT_CName": "橋頭糖廠"
+  },
+  {
+    "ODMRT_MrtId": "23",
+    "ODMRT_Name": "R23",
+    "ODMRT_Code": "123",
+    "ODMRT_CName": "橋頭火車站"
+  },
+  {
+    "ODMRT_MrtId": "24",
+    "ODMRT_Name": "R24",
+    "ODMRT_Code": "124",
+    "ODMRT_CName": "南崗山"
+  },
+  {
+    "ODMRT_MrtId": "25",
+    "ODMRT_Name": "O1",
+    "ODMRT_Code": "201",
+    "ODMRT_CName": "西子灣"
+  },
+  {
+    "ODMRT_MrtId": "26",
+    "ODMRT_Name": "O2",
+    "ODMRT_Code": "202",
+    "ODMRT_CName": "鹽埕埔"
+  },
+  {
+    "ODMRT_MrtId": "27",
+    "ODMRT_Name": "O4",
+    "ODMRT_Code": "203",
+    "ODMRT_CName": "市議會"
+  },
+  {
+    "ODMRT_MrtId": "28",
+    "ODMRT_Name": "O5",
+    "ODMRT_Code": "204",
+    "ODMRT_CName": "美麗島"
+  },
+  {
+    "ODMRT_MrtId": "29",
+    "ODMRT_Name": "O6",
+    "ODMRT_Code": "205",
+    "ODMRT_CName": "信義國小"
+  },
+  {
+    "ODMRT_MrtId": "30",
+    "ODMRT_Name": "O7",
+    "ODMRT_Code": "206",
+    "ODMRT_CName": "文化中心"
+  },
+  {
+    "ODMRT_MrtId": "31",
+    "ODMRT_Name": "O8",
+    "ODMRT_Code": "207",
+    "ODMRT_CName": "五塊厝"
+  },
+  {
+    "ODMRT_MrtId": "32",
+    "ODMRT_Name": "O9",
+    "ODMRT_Code": "208",
+    "ODMRT_CName": "技擊館"
+  },
+  {
+    "ODMRT_MrtId": "33",
+    "ODMRT_Name": "O10",
+    "ODMRT_Code": "209",
+    "ODMRT_CName": "衛武營"
+  },
+  {
+    "ODMRT_MrtId": "34",
+    "ODMRT_Name": "O11",
+    "ODMRT_Code": "210",
+    "ODMRT_CName": "鳳山西站"
+  },
+  {
+    "ODMRT_MrtId": "35",
+    "ODMRT_Name": "O12",
+    "ODMRT_Code": "211",
+    "ODMRT_CName": "鳳山"
+  },
+  {
+    "ODMRT_MrtId": "36",
+    "ODMRT_Name": "O13",
+    "ODMRT_Code": "212",
+    "ODMRT_CName": "大東"
+  },
+  {
+    "ODMRT_MrtId": "37",
+    "ODMRT_Name": "O14",
+    "ODMRT_Code": "213",
+    "ODMRT_CName": "鳳山國中"
+  },
+  {
+    "ODMRT_MrtId": "38",
+    "ODMRT_Name": "OT1",
+    "ODMRT_Code": "214",
+    "ODMRT_CName": "大寮"
+  },
+  {
+    "ODMRT_MrtId": "39",
+    "ODMRT_Name": "O5/R10",
+    "ODMRT_Code": "999",
+    "ODMRT_CName": "美麗島"
+  }
