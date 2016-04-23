@@ -1,28 +1,37 @@
-var http = require("http");
-var url = require("url");
+var express = require('express');
+var parseJSON = require('./parse-json');
+var fs = require('fs');
+var path = require('path');
 
-function start(route, handle) {
-  function onRequest(request, response) {
-    var postData = "";
-    var pathname = url.parse(request.url).pathname;
-    console.log("Request for " + pathname + " received.");
+var app = express();
 
-    request.setEncoding("utf8");
+app.use(express.static(__dirname + '/public'));
 
-    request.addListener("data", function(postDataChunk) {
-      postData += postDataChunk;
-      console.log("Received POST data chunk '"+
-      postDataChunk + "'.");
-    });
+app.get('/index', function(req, res){
+  // var filePath = path.join(__dirname, 'data.json');
+  // var result = parseJSON(filePath);
+  res.send('This is GET METHOD');
+  res.end();
 
-    request.addListener("end", function() {
-      route(handle, pathname, response, postData);
-    });
+})
+app.get('/data.json', function(req, res){
+  var filePath = path.join(__dirname, 'data.json');
+  fs.readFile(filePath, {encoding: 'utf-8'}, function(err, data){
+    if (!err){
+      console.log("receive data!");
+      res.send(data);
+      res.end();
+    } else {
+      console.log(err);
+      res.send(err);
+      res.end();
+    }
+  });
+})
 
-  }
+app.post('/newindex', function(req, res){
+  console.log("req received!");
+  res.send('This is POST METHOD');
+})
 
-  http.createServer(onRequest).listen(8888);
-  console.log("Server has started.");
-}
-
-exports.start = start;
+app.listen(8888);
