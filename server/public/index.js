@@ -1,23 +1,4 @@
-// var request = new XMLHttpRequest();
-// request.open('GET', 'data.json', true);
-//
-// request.onload = function() {
-//   if (request.status >= 200 && request.status < 400) {
-//     // Success!
-//     var resp = request.responseText;
-//     console.log(resp);
-//     parseJSON(resp);
-//     // setTimeout(setInterval(parseJSON(resp), 1000), 1000);
-//   } else {
-//     // We reached our target server, but it returned an error
-//   }
-// };
-//
-// request.onerror = function() {
-//   // There was a connection error of some sort
-// };
-//
-// request.send();
+
 var all_site_status = "{";
 var count = 0;
 var site = [101,102,103,104,105,106,107,108,109,110,
@@ -120,20 +101,8 @@ function sequential_get(count){
     all_site_status+="}";
     console.log(all_site_status);
     parseJSON(all_site_status);
-    // fs.writeFileSync('./data.json', all_site_status , 'utf-8', function(err){
-    //   if(err){
-    //     return console.log(err);
-    //   }
-    //   console.log("File saved");
-    // });
+
     all_site_status = {};
   }
-  // var localHttpObject2;
-  // for (var i = 0; i < 39; i++){
-  //   localHttpObject2 = {"site": site[i]}
-  //   request_get(localHttpObject2);
-  // }
 }
 sequential_get(0);
-// newSendRequest(102);
-//sendRequest();
