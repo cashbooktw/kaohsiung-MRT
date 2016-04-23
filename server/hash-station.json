@@ -1,4 +1,4 @@
-[
+{[
   {
     "ODMRT_MrtId": "1",
     "ODMRT_Name": "R3",
@@ -233,3 +233,4 @@
     "ODMRT_Code": "999",
     "ODMRT_CName": "美麗島"
   }
+]}
