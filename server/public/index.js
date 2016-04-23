@@ -1,29 +1,88 @@
-var request = new XMLHttpRequest();
-request.open('GET', 'data.json', true);
+// var request = new XMLHttpRequest();
+// request.open('GET', 'data.json', true);
+//
+// request.onload = function() {
+//   if (request.status >= 200 && request.status < 400) {
+//     // Success!
+//     var resp = request.responseText;
+//     console.log(resp);
+//     parseJSON(resp);
+//     // setTimeout(setInterval(parseJSON(resp), 1000), 1000);
+//   } else {
+//     // We reached our target server, but it returned an error
+//   }
+// };
+//
+// request.onerror = function() {
+//   // There was a connection error of some sort
+// };
+//
+// request.send();
+var all_site_status = "{";
+var count = 0;
 
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    // Success!
-    var resp = request.responseText;
-    console.log(resp);
-    parseJSON(resp);
-    // setTimeout(setInterval(parseJSON(resp), 1000), 1000);
-  } else {
-    // We reached our target server, but it returned an error
-  }
+var sendRequest = function(){
+  var request = new XMLHttpRequest();
+  request.open('GET', 'data.json', true);
+
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var resp = request.responseText;
+      console.log(resp);
+      parseJSON(resp);
+      // setTimeout(setInterval(parseJSON(resp), 1000), 1000);
+    } else {
+      // We reached our target server, but it returned an error
+    }
+  };
+
+  request.onerror = function() {
+    // There was a connection error of some sort
+  };
+
+  request.send();
 };
 
-request.onerror = function() {
-  // There was a connection error of some sort
-};
+var newSendRequest = function(theSite){
+  var request = new XMLHttpRequest();
+  request.open('GET', "http://data.kaohsiung.gov.tw/Opendata/MrtJsonGet.aspx" + "?site=" + theSite, true);
 
-request.send();
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      if (request.status >= 200 && request.status < 400) {
+        var resp = request.responseText;
+        // console.log(resp);
+        var temp = (resp.indexOf("<"));
+        var temp2 = resp.slice(0, temp).trim();
+        var temp2 = temp2.slice(1, temp2.length - 1).trim();
+        temp2 = temp2.replace("MRT",theSite);
+        console.log(temp2);
+        // all_site_status.push(temp2);
+        all_site_status+=temp2;
+        if (count < 38){
+          all_site_status+=",";
+        }
+        count++;
+        sequential_get(count);
+      }
+    } else {
+      // We reached our target server, but it returned an error
+    }
+  };
+  request.onerror = function() {
+    // There was a connection error of some sort
+  };
+  request.send();
+};
 var site = [101,102,103,104,105,106,107,108,109,110,
             111,112,113,114,115,116,117,118,119,120,
             121,122,123,124,
             201,202,203,204,205,206,207,208,209,210,
             211,212,213,214,
             999];//39
+
 var parseJSON = function (resp){
   resp = JSON.parse(resp);
   for(var i = 0; i < 39; i++){
@@ -42,10 +101,30 @@ var parseJSON = function (resp){
   document.getElementById(site[38] + "-3-descr").innerHTML = resp[site[38]][3].descr;
   document.getElementById(site[38] + "-3-arrival").innerHTML = resp[site[38]][3].arrival;
   document.getElementById(site[38] + "-3-next_arrival").innerHTML = resp[site[38]][3].next_arrival;
-  // console.log("test = " + resp[site[38]][2].descr);
-  // console.log("test = " + resp[site[38]][2].arrival);
-  // console.log("test = " + resp[site[38]][2].next_arrival);
-  // console.log("test = " + resp[site[38]][3].descr);
-  // console.log("test = " + resp[site[38]][3].arrival);
-  // console.log("test = " + resp[site[38]][3].next_arrival);
 }
+
+function sequential_get(count){
+  if (count < 39){
+    newSendRequest(site[count]);
+  } else {
+    count = 0;
+    all_site_status+="}";
+    console.log(all_site_status);
+    parseJSON(all_site_status);
+    // fs.writeFileSync('./data.json', all_site_status , 'utf-8', function(err){
+    //   if(err){
+    //     return console.log(err);
+    //   }
+    //   console.log("File saved");
+    // });
+    all_site_status = {};
+  }
+  // var localHttpObject2;
+  // for (var i = 0; i < 39; i++){
+  //   localHttpObject2 = {"site": site[i]}
+  //   request_get(localHttpObject2);
+  // }
+}
+sequential_get(0);
+// newSendRequest(102);
+//sendRequest();

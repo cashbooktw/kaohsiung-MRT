@@ -1,3 +1,4 @@
+// the test.js file is to get a kaohsiung-MRT json file, and write in server
 var request = require('request');
 var fs = require('fs');
 var util = require('util');
@@ -15,33 +16,22 @@ function request_get(localHttpObject2){
         },
         function slice_body (error, response, body){
           if (!error && response.statusCode == 200) {
-            // var temp = (body.match("<")).index;
             var temp = (body.indexOf("<"));
             var temp2 = body.slice(0, temp).trim();
             var temp2 = temp2.slice(1, temp2.length - 1).trim();
             temp2 = temp2.replace("MRT",localHttpObject2.site);
             console.log(temp2);
-            // all_site_status.push(temp2);
             all_site_status+=temp2;
             if (count < 38){
               all_site_status+=",";
-            }  
+            }
             count++;
             sequential_get(count);
           }
         }
   );
 }
-// request_get(localHttpObject);
 var count = 0;
-// function slice_body (error, response, body){
-//   if (!error && response.statusCode == 200) {
-//     var temp = (body.match("<")).index;
-//     var temp2 = body.slice(0, temp).trim();
-//     console.log(++count + " ");
-//     console.log(temp2);
-//   }
-// }
 
 function sequential_get(count){
   if (count < 39){
@@ -56,13 +46,8 @@ function sequential_get(count){
         return console.log(err);
       }
       console.log("File saved");
-    })
+    });
     all_site_status = {};
   }
-  // var localHttpObject2;
-  // for (var i = 0; i < 39; i++){
-  //   localHttpObject2 = {"site": site[i]}
-  //   request_get(localHttpObject2);
-  // }
 }
 sequential_get(0);

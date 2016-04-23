@@ -13,7 +13,7 @@ app.get('/index', function(req, res){
   res.send('This is GET METHOD');
   res.end();
 
-})
+});
 app.get('/data.json', function(req, res){
   var filePath = path.join(__dirname, 'data.json');
   fs.readFile(filePath, {encoding: 'utf-8'}, function(err, data){
@@ -27,11 +27,6 @@ app.get('/data.json', function(req, res){
       res.end();
     }
   });
-})
-
-app.post('/newindex', function(req, res){
-  console.log("req received!");
-  res.send('This is POST METHOD');
-})
+});
 
 app.listen(8888);
