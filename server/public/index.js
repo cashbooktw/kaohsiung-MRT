@@ -105,4 +105,7 @@ function sequential_get(count){
     all_site_status = {};
   }
 }
-sequential_get(0);
+
+// sequential_get(0);
+
+setInterval(sequential_get(0), 15000);
