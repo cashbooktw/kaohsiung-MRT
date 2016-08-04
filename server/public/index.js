@@ -42,7 +42,7 @@ var sendRequest = function(){
 
 var newSendRequest = function(theSite){
   var request = new XMLHttpRequest();
-  request.open('GET', "http://data.kaohsiung.gov.tw/Opendata/MrtJsonGet.aspx" + "?site=" + theSite, true);
+  request.open('GET', "https://data.kaohsiung.gov.tw/Opendata/MrtJsonGet.aspx" + "?site=" + theSite, true);
 
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
