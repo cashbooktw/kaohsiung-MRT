@@ -108,4 +108,5 @@ function sequential_get(count){
 
 // sequential_get(0);
 
-setInterval(sequential_get(0), 15000);
+// setInterval(sequential_get(0), 5000);
+setInterval(sendRequest, 5000);

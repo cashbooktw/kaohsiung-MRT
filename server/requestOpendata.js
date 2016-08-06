@@ -1,4 +1,4 @@
-// the test.js file is to get a kaohsiung-MRT json file, and write in server
+// the requestOpendata.js file is to get a kaohsiung-MRT json file, and write in server
 var request = require('request');
 var fs = require('fs');
 var util = require('util');
@@ -33,10 +33,11 @@ function request_get(localHttpObject2){
 }
 var count = 0;
 
-function sequential_get(count){
-  if (count < 39){
-    var localHttpObject2 = {"site": site[count]}
-    request_get(localHttpObject2);
+function sequential_get(siteIndex){
+  if (siteIndex < 39){
+    var querySite = {"site": site[siteIndex]}
+    count = siteIndex;
+    request_get(querySite);
   } else {
     count = 0;
     all_site_status+="}";
@@ -47,7 +48,9 @@ function sequential_get(count){
       }
       console.log("File saved");
     });
-    all_site_status = {};
+    all_site_status = "{";
   }
 }
-sequential_get(0);
+// sequential_get(0);
+// setInterval((() => sequential_get(0)), 15000);
+module.exports = sequential_get;

@@ -2,7 +2,7 @@ var express = require('express');
 var parseJSON = require('./parse-json');
 var fs = require('fs');
 var path = require('path');
-
+const requestOpendata = require('./requestOpendata.js');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -28,5 +28,7 @@ app.get('/data.json', function(req, res){
     }
   });
 });
+// console.log(requestOpendata);
+setInterval((() => requestOpendata(0)), 15000);
 
 app.listen(8888);
