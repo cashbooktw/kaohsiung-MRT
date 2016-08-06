@@ -8,8 +8,6 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 app.get('/index', function(req, res){
-  // var filePath = path.join(__dirname, 'data.json');
-  // var result = parseJSON(filePath);
   res.send('This is GET METHOD');
   res.end();
 
@@ -28,7 +26,8 @@ app.get('/data.json', function(req, res){
     }
   });
 });
-// console.log(requestOpendata);
+//requset to Opendata every 15s
+requestOpendata(0); //invoke immediately
 setInterval((() => requestOpendata(0)), 15000);
 
 app.listen(8888);

@@ -1,4 +1,3 @@
-
 var all_site_status = "{";
 var count = 0;
 var site = [101,102,103,104,105,106,107,108,109,110,
@@ -25,9 +24,8 @@ var sendRequest = function(){
     if (request.status >= 200 && request.status < 400) {
       // Success!
       var resp = request.responseText;
-      console.log(resp);
+      // console.log(resp);
       parseJSON(resp);
-      // setTimeout(setInterval(parseJSON(resp), 1000), 1000);
     } else {
       // We reached our target server, but it returned an error
     }
@@ -47,22 +45,17 @@ var newSendRequest = function(theSite){
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       // Success!
-      if (request.status >= 200 && request.status < 400) {
         var resp = request.responseText;
-        // console.log(resp);
         var temp = (resp.indexOf("<"));
         var temp2 = resp.slice(0, temp).trim();
         var temp2 = temp2.slice(1, temp2.length - 1).trim();
         temp2 = temp2.replace("MRT",theSite);
-        console.log(temp2);
-        // all_site_status.push(temp2);
         all_site_status+=temp2;
         if (count < 38){
           all_site_status+=",";
         }
         count++;
         sequential_get(count);
-      }
     } else {
       // We reached our target server, but it returned an error
     }
@@ -76,7 +69,6 @@ var newSendRequest = function(theSite){
 var parseJSON = function (resp){
   resp = JSON.parse(resp);
   for(var i = 0; i < 39; i++){
-    console.log(site[i]);
     document.getElementById(site[i]).innerHTML = cht_site[i];
     document.getElementById(site[i] + "-0-descr").innerHTML = resp[site[i]][0].descr;
     document.getElementById(site[i] + "-0-arrival").innerHTML = resp[site[i]][0].arrival;
@@ -93,20 +85,22 @@ var parseJSON = function (resp){
   document.getElementById(site[38] + "-3-next_arrival").innerHTML = resp[site[38]][3].next_arrival;
 }
 
-function sequential_get(count){
-  if (count < 39){
-    newSendRequest(site[count]);
+function sequential_get(siteIndex){
+  if (siteIndex < 39){
+    count = siteIndex;
+    newSendRequest(site[siteIndex]);
   } else {
     count = 0;
     all_site_status+="}";
-    console.log(all_site_status);
     parseJSON(all_site_status);
 
-    all_site_status = {};
+    all_site_status = "{";
   }
 }
 
-// sequential_get(0);
-
-// setInterval(sequential_get(0), 5000);
-setInterval(sendRequest, 5000);
+// This is for direct request to Opendata
+sequential_get(0); // invoke immediately
+setInterval((() => sequential_get(0)), 15000);
+// This is for request to node.js server
+// sendRequest(); // invoke immediately
+// setInterval(sendRequest, 5000);
